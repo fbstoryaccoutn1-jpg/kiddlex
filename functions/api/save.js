@@ -97,8 +97,8 @@ export async function onRequestPost({request,env}){
 
     const current=await ghFetch(endpoint+"?ref="+encodeURIComponent(branch)+"&t="+Date.now(),{headers},1);
     if(!current.ok){
-      const detail=await current.text();
-      return Response.json({error:"Could not load saved data ("+current.status+").",detail:detail.slice(0,1000)},{status:502});
+      await current.text();
+      return Response.json({error:"Could not load saved data."},{status:502});
     }
 
     const meta=await current.json();
@@ -149,8 +149,8 @@ export async function onRequestPost({request,env}){
     },2);
 
     if(!update.ok){
-      const detail=await update.text();
-      return Response.json({error:"Save failed ("+update.status+")",detail:detail.slice(0,1500)},{status:502});
+      await update.text();
+      return Response.json({error:"Save failed."},{status:502});
     }
 
     const updateJson=await update.json().catch(()=>({}));
