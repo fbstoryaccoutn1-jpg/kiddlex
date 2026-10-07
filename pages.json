@@ -31,7 +31,11 @@
           "url": "https://jazz.kiddlex.fun/hemari/"
         }
       ],
-      "videos": []
+      "videos": [
+        {
+          "image": "/assets/whatsapp-profile.jpg"
+        }
+      ]
     },
     "whatsapp1": {
       "pageId": "kiddlex-whatsapp1",
