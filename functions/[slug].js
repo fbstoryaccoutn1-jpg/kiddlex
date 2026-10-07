@@ -60,7 +60,7 @@ async function loadPages(env){
 export async function onRequestGet({params,env,request}){
   const requestUrl=new URL(request.url); const origin=requestUrl.origin; const host=requestUrl.host;
   const slug=String(params.slug||"").toLowerCase();
-  let db; try{db=await loadPages(env)}catch(e){return new Response("Site configuration error.\n"+e.message,{status:500,headers:{"content-type":"text/plain;charset=UTF-8"}})}
+  let db; try{db=await loadPages(env)}catch{return new Response("Site configuration error.",{status:500,headers:{"content-type":"text/plain;charset=UTF-8","cache-control":"no-store"}})}
   const c=db.pages?.[slug];
   if(!c) return new Response('<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Page not found</title><style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#080b12;color:#fff;font-family:system-ui;text-align:center}.box{padding:28px}h1{margin:0 0 8px}</style></head><body><div class="box"><h1>Page not found</h1><p>This bio link does not exist.</p></div></body></html>',{status:404,headers:{"content-type":"text/html;charset=UTF-8","cache-control":"no-store"}});
   const rawDelay=Number(c.redirectDelay); const delay=Number.isFinite(rawDelay)&&rawDelay>=0?rawDelay:3;
@@ -77,7 +77,7 @@ export async function onRequestGet({params,env,request}){
   const html=`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>${title}</title><meta name="description" content="${desc}">
 <meta property="og:type" content="website"><meta property="og:url" content="${origin}/${esc(slug)}"><meta property="og:title" content="${title}"><meta property="og:description" content="${desc}"><meta property="og:image" content="${og}">
-<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:width" content="400"><meta property="og:image:height" content="400">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${title}"><meta name="twitter:description" content="${desc}"><meta name="twitter:image" content="${og}">
 <style>
 :root{--bg:#070910;--purple:#8b5cf6;--pink:#ec4899;--cyan:#22d3ee}
