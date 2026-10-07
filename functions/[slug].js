@@ -6,18 +6,46 @@ function esc(v=""){
 
 function iconFor(title="",url=""){
   const s=(title+" "+url).toLowerCase();
-  const svg=(body)=>'<svg viewBox="0 0 24 24" aria-hidden="true">'+body+'</svg>';
-  if(s.includes("whatsapp")||s.includes("wa.me")) return svg('<path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.5 0 .2 5.3.2 11.8c0 2.1.6 4.2 1.7 6L0 24l6.4-1.7a12 12 0 0 0 5.7 1.5h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.2-3.5-8.5Zm-8.3 18.3h-.1a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.8 1 1-3.7-.2-.4a9.8 9.8 0 1 1 8.5 4.7Zm5.4-7.4c-.3-.1-1.8-.9-2.1-1-.3-.1-.5-.1-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.6 0-.2-.7-1.8-1-2.4-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.3 1.4 3.6c.2.2 2.4 3.7 5.9 5.2 2.2.9 3.1 1 4.2.8.7-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3Z"/></svg>');
-  if(s.includes("facebook")||s.includes("fb.com")||s.includes("facebook.com")) return svg('<path d="M13.6 24v-10h3.4l.5-3.9h-3.9V7.6c0-1.1.3-1.9 2-1.9h2.1V2.2c-.4-.1-1.6-.2-3.1-.2-3.1 0-5.2 1.9-5.2 5.3v2.8H6v3.9h3.4v10h4.2Z"/>');
-  if(s.includes("instagram")) return svg('<path d="M7.2 2h9.6A5.2 5.2 0 0 1 22 7.2v9.6a5.2 5.2 0 0 1-5.2 5.2H7.2A5.2 5.2 0 0 1 2 16.8V7.2A5.2 5.2 0 0 1 7.2 2Zm0 2A3.2 3.2 0 0 0 4 7.2v9.6A3.2 3.2 0 0 0 7.2 20h9.6a3.2 3.2 0 0 0 3.2-3.2V7.2A3.2 3.2 0 0 0 16.8 4H7.2Zm10.1 1.5a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/>');
-  if(s.includes("youtube")||s.includes("youtu.be")) return svg('<path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/>');
-  if(s.includes("telegram")||s.includes("t.me")) return svg('<path d="M23.5 2.2 19.9 21c-.3 1.3-1 1.6-2.1 1l-5.5-4-2.7 2.6c-.3.3-.5.5-1 .5l.4-5.6 10.2-9.2c.4-.4-.1-.6-.7-.2L5.9 14 0 12.1c-1.3-.4-1.3-1.3.3-1.9L22.8 1.5c1-.4 2 .2.7.7Z"/>');
-  if(s.includes("tiktok")) return svg('<path d="M16.7 2c.5 2.6 2 4.2 4.6 4.7v3.2a9.1 9.1 0 0 1-4.6-1.3v6.6a7.1 7.1 0 1 1-6.1-7V11a4.2 4.2 0 1 0 3 4V2h3.1Z"/>');
-  if(s.includes("mail")||s.includes("@")) return svg('<path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 2 9 6 9-6H3Zm18 10V9.4l-9 6-9-6V17h18Z"/>');
-  if(s.includes("video")||s.includes("watch")) return svg('<path d="M8 5v14l11-7L8 5Z"/>');
-  return svg('<path d="M9.6 14.4a4 4 0 0 0 5.7 0l3.1-3.1a4 4 0 0 0-5.7-5.7l-1.8 1.8 1.4 1.4 1.8-1.8a2 2 0 1 1 2.9 2.9L13.9 13a2 2 0 0 1-2.9 0l-1.4 1.4Zm4.8-4.8a4 4 0 0 0-5.7 0l-3.1 3.1a4 4 0 1 0 5.7 5.7l1.8-1.8-1.4-1.4-1.8 1.8A2 2 0 0 1 7 14.1l3.1-3.1a2 2 0 0 1 2.9 0l1.4-1.4Z"/>');
-}
+  const svg=(body,cls="")=>'<svg class="'+cls+'" viewBox="0 0 24 24" aria-hidden="true">'+body+'</svg>';
 
+  if(s.includes("whatsapp")||s.includes("wa.me")){
+    return svg('<path d="M12.04 2C6.52 2 2.03 6.48 2.03 12c0 1.76.46 3.48 1.33 4.99L2 22l5.16-1.35A9.96 9.96 0 0 0 12.04 22C17.56 22 22 17.52 22 12S17.56 2 12.04 2Zm0 18.2a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.06.8.82-2.98-.2-.31A8.18 8.18 0 1 1 12.04 20.2Zm4.49-6.12c-.25-.12-1.45-.72-1.68-.8-.22-.08-.39-.12-.55.12-.16.25-.63.8-.77.96-.14.16-.28.18-.53.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.7-.14-.25-.02-.38.1-.5.11-.11.25-.28.37-.42.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.43.06-.65.31-.22.25-.85.83-.85 2.02s.87 2.34.99 2.5c.12.17 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.47-.28Z"/>',"brand-whatsapp");
+  }
+
+  if(s.includes("facebook")||s.includes("fb.com")||s.includes("facebook.com")){
+    return svg('<path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.96h-1.51c-1.49 0-1.96.93-1.96 1.88v2.27h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07Z"/>',"brand-facebook");
+  }
+
+  if(s.includes("instagram")||s.includes("instagr.am")){
+    return svg('<path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6Zm9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/>',"brand-instagram");
+  }
+
+  if(s.includes("youtube")||s.includes("youtu.be")){
+    return svg('<path d="M23.5 6.19a3.01 3.01 0 0 0-2.12-2.13C19.51 3.56 12 3.56 12 3.56s-7.51 0-9.38.5A3.01 3.01 0 0 0 .5 6.19 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.81 3.01 3.01 0 0 0 2.12 2.13c1.87.5 9.38.5 9.38.5s7.51 0 9.38-.5a3.01 3.01 0 0 0 2.12-2.13A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.81ZM9.6 15.6V8.4L15.82 12 9.6 15.6Z"/>',"brand-youtube");
+  }
+
+  if(s.includes("telegram")||s.includes("t.me")){
+    return svg('<path d="M23.93 2.04 20.3 20.9c-.27 1.33-.99 1.66-2 1.03l-5.52-4.07-2.66 2.58c-.3.3-.54.54-1.1.54l.39-5.62 10.23-9.25c.45-.4-.1-.63-.69-.23L6.3 13.87.86 12.17c-1.18-.37-1.2-1.18.25-1.75L22.4 2.2c.99-.37 1.85.22 1.53-.16Z"/>',"brand-telegram");
+  }
+
+  if(s.includes("tiktok")){
+    return svg('<path d="M16.7 2c.47 2.55 1.96 4.12 4.55 4.65v3.2a9.13 9.13 0 0 1-4.55-1.31v6.63a7.1 7.1 0 1 1-6.12-7.03v3.23a3.96 3.96 0 1 0 2.9 3.8V2h3.22Z"/>',"brand-tiktok");
+  }
+
+  if(s.includes("website")||s.includes("web site")||s.includes("visit site")||s.includes("homepage")||s.includes("www.")){
+    return svg('<circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 12h17M12 3c2.3 2.5 3.5 5.5 3.5 9S14.3 18.5 12 21M12 3C9.7 5.5 8.5 8.5 8.5 12S9.7 18.5 12 21" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',"brand-website");
+  }
+
+  if(s.includes("mail")||s.includes("email")||s.includes("mailto:")||s.includes("@")){
+    return svg('<path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 2 9 6 9-6H3Zm18 10V9.4l-9 6-9-6V17h18Z"/>',"brand-email");
+  }
+
+  if(s.includes("video")||s.includes("watch")){
+    return svg('<path d="M8 5v14l11-7L8 5Z"/>',"brand-video");
+  }
+
+  return svg('<path d="M9.6 14.4a4 4 0 0 0 5.7 0l3.1-3.1a4 4 0 0 0-5.7-5.7l-1.8 1.8 1.4 1.4 1.8-1.8a2 2 0 1 1 2.9 2.9L13.9 13a2 2 0 0 1-2.9 0l-1.4 1.4Zm4.8-4.8a4 4 0 0 0-5.7 0l-3.1 3.1a4 4 0 1 0 5.7 5.7l1.8-1.8-1.4-1.4-1.8 1.8A2 2 0 0 1 7 14.1l3.1-3.1a2 2 0 0 1 2.9 0l1.4-1.4Z"/>',"brand-link");
+}
 
 function normalizeImageUrl(value="",origin=""){
   let s=String(value||"").trim();
@@ -100,6 +128,14 @@ h1{font-size:31px;line-height:1.06;margin:21px 0 6px;letter-spacing:-.9px;text-a
 .links{width:100%;display:grid;gap:13px}.link-btn{position:relative;min-height:70px;width:100%;padding:10px 13px;border-radius:24px;color:#fff;text-decoration:none;font-weight:850;display:grid;grid-template-columns:48px 1fr 38px;align-items:center;gap:13px;background:linear-gradient(135deg,rgba(25,29,46,.94),rgba(12,15,27,.92));border:1px solid rgba(167,139,250,.45);box-shadow:0 15px 36px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.06);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
 .link-btn:hover{transform:translateY(-3px) scale(1.008);border-color:rgba(244,114,182,.58);box-shadow:0 19px 42px rgba(0,0,0,.3),0 0 24px rgba(139,92,246,.14)}.link-btn:active{transform:scale(.985)}
 .icon{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(145deg,rgba(139,92,246,.34),rgba(236,72,153,.22));border:1px solid rgba(255,255,255,.14)}.icon svg{width:23px;height:23px;fill:currentColor}
+.icon:has(.brand-whatsapp){background:#25D366;color:#fff;border-color:rgba(255,255,255,.25)}
+.icon:has(.brand-facebook){background:#1877F2;color:#fff;border-color:rgba(255,255,255,.22)}
+.icon:has(.brand-instagram){background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);color:#fff;border-color:rgba(255,255,255,.24)}
+.icon:has(.brand-youtube){background:#ff0000;color:#fff;border-color:rgba(255,255,255,.22)}
+.icon:has(.brand-telegram){background:#229ED9;color:#fff;border-color:rgba(255,255,255,.22)}
+.icon:has(.brand-tiktok){background:#050505;color:#fff;border-color:rgba(255,255,255,.22)}
+.icon:has(.brand-website){background:linear-gradient(135deg,#2563eb,#06b6d4);color:#fff;border-color:rgba(255,255,255,.22)}
+.icon:has(.brand-email){background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;border-color:rgba(255,255,255,.22)}
 .label{text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:15px}.arrow{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);font-size:18px;transition:transform .18s ease}.link-btn:hover .arrow{transform:translateX(3px)}
 .videos-wrap{width:100%;margin-top:28px}.videos-title{display:flex;align-items:center;gap:9px;font-size:15px;font-weight:900;margin:0 0 13px}.videos-title:before{content:"▶";width:29px;height:29px;border-radius:10px;display:grid;place-items:center;font-size:11px;background:linear-gradient(135deg,#8b5cf6,#ec4899)}
 .videos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.video-card{position:relative;display:block;aspect-ratio:9/16;border-radius:22px;overflow:hidden;background:linear-gradient(145deg,#211938,#10182a);border:1px solid rgba(255,255,255,.14);box-shadow:0 16px 34px rgba(0,0,0,.25);transition:transform .22s ease,box-shadow .22s ease}.video-card:hover{transform:translateY(-4px) scale(1.015);box-shadow:0 22px 42px rgba(0,0,0,.34)}
